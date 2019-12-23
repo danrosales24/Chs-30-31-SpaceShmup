@@ -6,7 +6,7 @@ using UnityEngine;
 /// Keeps a GameObject on screen.
 /// Note that this ONLY works for an orthographic Main Camera at [0,0,0].
 /// </summary>
-public class BoundsCheck : MonoBehaviour{
+public class BoundsCheck : MonoBehaviour {
     [Header("Set in Inspector")]
     public float radius = 1f;
     public bool keepOnScreen = true;
@@ -18,7 +18,7 @@ public class BoundsCheck : MonoBehaviour{
     [HideInInspector]
     public bool offRight, offLeft, offUp, offDown;
 
-    void Awake()
+	void Awake()
     {
         camHeight = Camera.main.orthographicSize;
         camWidth = camHeight * Camera.main.aspect;

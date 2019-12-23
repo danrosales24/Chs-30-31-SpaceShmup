@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_2 : Enemy
-{
+public class Enemy_2 : Enemy {
 
     [Header("Set in Inspector: Enemy_2")]
     // Determines how much the sine wave will affect movement
@@ -26,7 +25,7 @@ public class Enemy_2 : Enemy
         p1 = Vector3.zero;
         p1.x = bndCheck.camWidth + bndCheck.radius;
         p1.y = Random.Range(-bndCheck.camHeight, bndCheck.camHeight);
-        if (Random.value > 0.5f)
+        if(Random.value > 0.5f)
         {
             p0.x *= -1;
             p1.x *= -1;

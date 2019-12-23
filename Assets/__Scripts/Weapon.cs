@@ -36,8 +36,7 @@ public class WeaponDefinition
     public float delayBetweenShots = 0;
     public float velocity = 20; // Speed of projectiles
 }
-public class Weapon : MonoBehaviour
-{
+public class Weapon : MonoBehaviour {
     static public Transform PROJECTILE_ANCHOR;
 
     [Header("Set Dynamically")]
@@ -57,7 +56,7 @@ public class Weapon : MonoBehaviour
         SetType(_type);
 
         // Dynamically create an anchor for all Projectiles
-        if (PROJECTILE_ANCHOR == null)
+        if(PROJECTILE_ANCHOR == null)
         {
             GameObject go = new GameObject("_ProjectileAnchor");
             PROJECTILE_ANCHOR = go.transform;
@@ -65,7 +64,7 @@ public class Weapon : MonoBehaviour
 
         // Find the fireDelegate of the root GameObject
         GameObject rootGO = transform.root.gameObject;
-        if (rootGO.GetComponent<Hero>() != null)
+        if(rootGO.GetComponent<Hero>() != null)
         {
             rootGO.GetComponent<Hero>().fireDelegate += Fire;
         }
@@ -140,8 +139,7 @@ public class Weapon : MonoBehaviour
         {
             go.tag = "ProjectileHero";
             go.layer = LayerMask.NameToLayer("ProjectileHero");
-        }
-        else
+        } else
         {
             go.tag = "ProjectileEnemy";
             go.layer = LayerMask.NameToLayer("ProjectileEnemy");

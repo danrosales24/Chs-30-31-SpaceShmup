@@ -8,16 +8,18 @@ public class Enemy_1 : Enemy {
     [Header("Set in Inspector: Enemy_1")]
     public float waveFrequency = 2;
     public float waveWidth = 4;
-        public float waveRotY = 45;
+    public float waveRotY = 45;
     private float x0;
     private float birthTime;
-    // Use this for initialization
-    void Start()
+
+	// Use this for initialization
+	void Start()
     {
         x0 = pos.x;
         birthTime = Time.time;
 
     }
+
     public override void Move()
     {
         Vector3 tempPos = pos;
@@ -29,8 +31,9 @@ public class Enemy_1 : Enemy {
         Vector3 rot = new Vector3(0, sin * waveRotY, 0);
         this.transform.rotation = Quaternion.Euler(rot);
         base.Move();
-        //    print(bndCheck.isOnScreen);
+    //    print(bndCheck.isOnScreen);
     }
+
     // Override the Move function on Enemy
     // make sure to read the section on what is needed to override a function
 

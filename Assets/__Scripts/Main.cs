@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Main : MonoBehaviour
-{
+public class Main : MonoBehaviour {
 
     static public Main S; // A singleton for Main
     static Dictionary<WeaponType, WeaponDefinition> WEAP_DICT;
@@ -22,7 +21,7 @@ public class Main : MonoBehaviour
 
     private BoundsCheck bndCheck;
 
-    public void ShipDestroyed(Enemy e)
+    public void ShipDestroyed( Enemy e)
     {
         // Potentially generate a PowerUp
         if (Random.value <= e.powerUpDropChance)
@@ -53,7 +52,7 @@ public class Main : MonoBehaviour
 
         // A generic Dictionary with WeaponType as the key
         WEAP_DICT = new Dictionary<WeaponType, WeaponDefinition>();
-        foreach (WeaponDefinition def in weaponDefinitions)
+        foreach(WeaponDefinition def in weaponDefinitions)
         {
             WEAP_DICT[def.type] = def;
         }
